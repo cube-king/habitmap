@@ -1,0 +1,48 @@
+body {
+    background-color: #0e1818;
+    margin-left:0%;
+    margin-right:0%;
+}
+p {
+    font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color:white;
+}
+h1 {
+    font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color:white;
+    font-size: 3vw;
+}
+button {
+    font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color:white;
+    background-color: #0e1818;
+    border: 2px solid white;
+    border-radius: 4px;
+}
+button:hover {
+    background-color: #152424;
+}
+button:active {
+    background-color: #1b2a2a;
+}
+.bottombar {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #1b2a2a;
+    padding-left:1vw;
+}
+.container {
+    padding-left:1vw;
+    padding-right:1vw;
+}
