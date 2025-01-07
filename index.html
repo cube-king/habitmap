@@ -12,6 +12,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="https://d3js.org/d3.v7.min.js"></script>
+        <!-- v6 is also supported -->
+        <script src="https://d3js.org/d3.v6.min.js"></script>
         <script src="https://unpkg.com/cal-heatmap/dist/cal-heatmap.min.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/cal-heatmap/dist/cal-heatmap.css">
     </head>
@@ -25,11 +27,11 @@
             <ul class="habitlist">
 
             </ul>
+            <div id="cal-heatmap"></div>
         </div>
         <div class="bottombar">
-            <p>HabitMap, for 2025 High Seas</p>
+            <p tag="bottomblock">HabitMap, for 2025 High Seas</p><p tag="bottomblock" class="username-me">cube-king</p>
         </div>
-        <div id="cal-heatmap"></div>
         <script src="index.js" async defer></script>
     </body>
 </html>
