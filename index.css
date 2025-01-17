@@ -2,7 +2,10 @@ body {
     background-color: #0e1818;
     margin-left:0%;
     margin-right:0%;
+    overflow-x:hidden;
+    padding-bottom:5vw;
 }
+
 p {
     font-family: "Roboto Mono", serif;
     font-optical-sizing: auto;
@@ -10,6 +13,7 @@ p {
     font-style: normal;
     color:white;
 }
+
 h1 {
     font-family: "Roboto Mono", serif;
     font-optical-sizing: auto;
@@ -18,6 +22,7 @@ h1 {
     color:white;
     font-size: 3vw;
 }
+
 button {
     font-family: "Roboto Mono", serif;
     font-optical-sizing: auto;
@@ -28,21 +33,48 @@ button {
     border: 2px solid white;
     border-radius: 4px;
 }
+
 button:hover {
     background-color: #152424;
 }
+
 button:active {
     background-color: #1b2a2a;
 }
+
 .bottombar {
     overflow: hidden;
     position: fixed;
-    bottom: 0;
+    bottom: 0%;
     width: 100%;
     background-color: #1b2a2a;
     padding-left:1vw;
 }
+
 .container {
     padding-left:1vw;
     padding-right:1vw;
+}
+
+.graphcontainer {
+    display:grid;
+    grid-template-columns:repeat(7, 1fr);
+    grid-template-rows:repeat(5, 1fr);
+    border:2px solid blue;
+    height:40vh;
+    width:25vw;
+    margin-left: 0vw;
+}
+
+.day {
+    border:2px solid red;
+    border-radius: 5px;
+}
+
+.dayspacer {
+    border:2px solid transparent;
+}
+
+input {
+    width:12.1vw;
 }
