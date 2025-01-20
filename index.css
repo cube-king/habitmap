@@ -6,6 +6,11 @@ body {
     padding-bottom:5vw;
 }
 
+a {
+    text-decoration: none;
+    color:#ffffff;
+}
+
 p {
     font-family: "Roboto Mono", serif;
     font-optical-sizing: auto;
@@ -60,15 +65,17 @@ button:active {
     display:grid;
     grid-template-columns:repeat(7, 1fr);
     grid-template-rows:repeat(5, 1fr);
-    border:2px solid blue;
+    border:2px solid rgb(50, 90, 77);
     height:40vh;
     width:25vw;
     margin-left: 0vw;
+    border-radius: 5px;
 }
 
-.day {
-    border:2px solid red;
+.dayredborder {
+    border:2px solid rgb(113, 255, 122);
     border-radius: 5px;
+    margin: 5px;
 }
 
 .dayspacer {
