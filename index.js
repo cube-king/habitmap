@@ -60,6 +60,7 @@ function createNewGoal() {
                 <div class="graphcontainer" id="graphcontainer${containernum}"></div>
                 <input type="text" class="titleinput" id="title${containernum}">
                 <input type="text" class="amountinput" id="amount${containernum}">
+                <input type="text" class="amountgoalinput" id="amountgoal${containernum}">
                 <br class="break${containernum}">
                 <br class="break${containernum}">
             </div>
@@ -68,6 +69,7 @@ function createNewGoal() {
     debugTitle.textContent = containernum
     createDays()
     shiftDays()
+    addHeaderUpdates()
     localStorage.setItem("containernum",containernum)
 }
 
@@ -91,6 +93,7 @@ function deleteLastGoal() {
             breakElements[0].remove();
         }
         localStorage.removeItem('header' + containernum);
+        console.log(containernum)
         console.log(localStorage.getItem('header' + containernum))
         containernum--
         debugTitle.textContent = containernum
@@ -98,18 +101,43 @@ function deleteLastGoal() {
     }
 }
 
-loadContainerNums()
-
-document.querySelectorAll('.titleinput').forEach(ttinput => {  
-    ttinput.addEventListener('input', function() {
-        const parentContainerNum = ttinput.parentElement.getAttribute('data-containernum');
-        const header = document.getElementById('header' + parentContainerNum);
-        if (header) {
-            header.textContent = "Goal #" + parentContainerNum + ": " + ttinput.value;
-            localStorage.setItem('header' + parentContainerNum, header.textContent)
-        } else {
-            console.warn(`No header found with ID: header${parentContainerNum}`);
-        }
-        console.log('Header updated');
+function addHeaderUpdates() {
+    document.querySelectorAll('.titleinput').forEach(ttinput => {  
+        ttinput.addEventListener('input', function() {
+            const parentContainerNum = ttinput.parentElement.getAttribute('data-containernum');
+            const header = document.getElementById('header' + parentContainerNum);
+            if (header) {
+                header.textContent = "Goal #" + parentContainerNum + ": " + ttinput.value;
+                localStorage.setItem('header' + parentContainerNum, header.textContent)
+            } else {
+                console.warn(`No header found with ID: header${parentContainerNum}`);
+            }
+            console.log('Header updated');
+        });
     });
-});
+}
+
+function addAmountUpdates() {
+    document.querySelectorAll('.amountinput').forEach(aminput => {  
+        aminput.addEventListener('input', function() {
+            const parentContainerNum = aminput.parentElement.getAttribute('data-containernum');
+            localStorage.setItem('amount' + parentContainerNum, aminput.value)
+            console.log('Amount updated ', localStorage.getItem('amount' + parentContainerNum))
+        });
+    });
+}
+
+function addAmountGoalUpdates() {
+    document.querySelectorAll('.amountgoalinput').forEach(aginput => {   
+        aginput.addEventListener('input', function() {
+            const parentContainerNum = aginput.parentElement.getAttribute('data-containernum');
+            localStorage.setItem('amountgoal' + parentContainerNum, aginput.value)
+            console.log('Amount Goal updated ', localStorage.getItem('amountgoal' + parentContainerNum))
+        });
+    });
+}
+
+loadContainerNums()
+addHeaderUpdates()
+addAmountUpdates()
+addAmountGoalUpdates()
